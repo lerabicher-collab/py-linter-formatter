@@ -21,7 +21,9 @@ def format_linter_report(linter_report: dict) -> list:
         {
             "path": path,
             "status": "passed" if not errors else "failed",
-            "errors": [] if not errors else [format_linter_error(error) for error in errors],
+            "errors": [] if not errors else [
+                format_linter_error(error) for error in errors
+            ],
         }
         for path, errors in linter_report.items()
     ]
